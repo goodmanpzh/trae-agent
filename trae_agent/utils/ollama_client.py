@@ -13,10 +13,10 @@ from typing import override
 import openai
 from ollama import chat as ollama_chat
 from openai.types.responses import (
-    EasyInputMessageParam,
-    FunctionToolParam,
-    ResponseFunctionToolCallParam,
-    ResponseInputParam,
+    EasyInputMessageParam, # 定义消息格式
+    FunctionToolParam, # 定义工具参数
+    ResponseFunctionToolCallParam, # 定义工具调用参数
+    ResponseInputParam, # 定义输入参数
 )
 from openai.types.responses.response_input_param import FunctionCallOutput
 

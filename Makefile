@@ -14,7 +14,7 @@ help:
 
 # Installation commands
 install:
-	uv pip install -e .
+	uv pip install -e . -i https://pypi.mirrors.ustc.edu.cn/simple/
 
 install-test:
 	uv pip install -e ".[test]"
