@@ -13,6 +13,8 @@ help:
 	@echo "  clean           - Clean up build artifacts and cache"
 
 # Installation commands
+uv-venv:
+	uv venv
 install:
 	uv pip install -e . -i https://pypi.mirrors.ustc.edu.cn/simple/
 
