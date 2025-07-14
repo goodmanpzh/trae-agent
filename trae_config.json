@@ -53,9 +53,9 @@
       "max_retries": 10
     },
     "openrouter": {
-    "api_key": "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",
-    "base_url": "https://openrouter.ai/api/v1",
-    "model": "moonshotai/kimi-k2:free",
+    "api_key": "sk-vobhnalamqxulbhbfwzndyrxfhvijcfgdsjinmxhwwdctpaq",
+    "base_url": "https://api.siliconflow.cn/v1",
+    "model": "Qwen/Qwen3-8B",
     "max_tokens": 4096,
     "temperature": 0.5,
     "top_p": 1,
