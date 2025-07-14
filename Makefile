@@ -25,7 +25,7 @@ install-dev:
 	uv pip install -e ".[test,evaluation]"
 
 uv-sync:
-	uv sync --all-extras
+	uv sync --all-extras -i https://pypi.mirrors.ustc.edu.cn/simple/
 
 uv-pre-commit:
 	uv run pre-commit run --all-files
