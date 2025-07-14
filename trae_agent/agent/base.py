@@ -6,6 +6,7 @@
 from abc import ABC, abstractmethod
 
 from ..tools.base import Tool, ToolCall, ToolExecutor, ToolResult
+from ..tools.ckg_tool import clear_older_ckg
 from ..utils.cli_console import CLIConsole
 from ..utils.config import Config, ModelParameters
 from ..utils.llm_basics import LLMMessage, LLMResponse
@@ -39,7 +40,7 @@ class Agent(ABC):
         else:
             self._llm_client = llm_client
             self._model_parameters = llm_client.model_parameters
-            self._max_steps = llm_client._max_steps
+            self._max_steps = llm_client.max_steps
 
         self._initial_messages: list[LLMMessage] = []
         self._task: str = ""
@@ -49,6 +50,9 @@ class Agent(ABC):
 
         # Trajectory recorder
         self._trajectory_recorder: TrajectoryRecorder | None = None
+
+        # CKG tool-specific: clear the older CKG databases
+        clear_older_ckg()
 
     @classmethod
     def from_config(cls, config: Config) -> "Agent":
@@ -137,6 +141,8 @@ class Agent(ABC):
 
         execution = AgentExecution(task=self._task, steps=[])
 
+        step: AgentStep | None = None
+
         try:
             messages = self._initial_messages
             step_number = 1
@@ -145,12 +151,11 @@ class Agent(ABC):
                 step = AgentStep(step_number=step_number, state=AgentState.THINKING)
 
                 try:
-                    # Get LLM response
                     step.state = AgentState.THINKING
-
                     # Display thinking state
                     self._update_cli_console(step)
 
+                    # Get LLM response
                     llm_response = self._llm_client.chat(
                         messages, self._model_parameters, self._tools
                     )
@@ -207,7 +212,8 @@ class Agent(ABC):
         execution.execution_time = time.time() - start_time
 
         # Display final summary
-        self._update_cli_console(step)
+        if step:
+            self._update_cli_console(step)
 
         return execution
 
