@@ -37,5 +37,5 @@ def chat_with_openrouter(prompt, model="Qwen/Qwen3-8B"):
             print("响应内容:", response.text)
 
 if __name__ == "__main__":
-    user_input = input("请输入你的问题: ")
+    user_input = "请你写一个可以输出Hello World的Python代码"
     chat_with_openrouter(user_input)
