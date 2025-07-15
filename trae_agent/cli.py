@@ -86,6 +86,7 @@ def run(
     Run is the main function of tace. It runs a task using Trae Agent.
     Args:
         tasks: the task that you want your agent to solve. This is required to be in the input
+        file_path: the path to the file that contains the task description. This is required to be in the input
         model: the model expected to be use
         working_dir: the working directory of the agent. This should be set either in cli or inf the config file (trae_config.json)
 
@@ -121,6 +122,8 @@ def run(
     else:
         working_dir = os.getcwd()
 
+    # config的类型是Configure类的实例，并且其是经过对闯入的参数更新之后的
+    # 按照一定的优先级进行更新之后的，CLI > ENV > Config > Default
     config = load_config(config_file, provider, model, model_base_url, api_key, max_steps)
 
     # Create agent

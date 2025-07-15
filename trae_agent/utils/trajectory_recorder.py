@@ -217,6 +217,7 @@ class TrajectoryRecorder:
         except Exception as e:
             print(f"Warning: Failed to save trajectory to {self.trajectory_path}: {e}")
 
+    # 以下的serialize函数的作用是将对象数据转化为字典类型的数据，以字典类型的数据来保存
     def _serialize_message(self, message: LLMMessage) -> dict[str, Any]:
         """Serialize an LLM message to a dictionary."""
         data: dict[str, Any] = {"role": message.role, "content": message.content}
