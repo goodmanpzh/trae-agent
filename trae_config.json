@@ -1,13 +1,13 @@
 {
-  "default_provider": "ollama",
+  "default_provider": "openai",
   "max_steps": 20,
   "enable_lakeview": true,
   "model_providers": {
     "openai": {
-      "api_key": "your_openai_api_key",
-      "base_url": "https://api.openai.com/v1",
-      "model": "gpt-4o",
-      "max_tokens": 128000,
+      "api_key": "",
+      "base_url": "http://localhost:12341/v1",
+      "model": "/data/share_weight/Mistral-7B-v0.3",
+      "max_tokens": 4096,
       "temperature": 0.5,
       "top_p": 1,
       "max_retries": 10
@@ -53,9 +53,9 @@
       "max_retries": 10
     },
     "openrouter": {
-    "api_key": "sk-vobhnalamqxulbhbfwzndyrxfhvijcfgdsjinmxhwwdctpaq",
-    "base_url": "https://api.siliconflow.cn/v1",
-    "model": "Qwen/Qwen3-8B",
+    "api_key": "",
+    "base_url": "http://localhost:12341",
+    "model": "/data/share_weight/Qwen3-4B",
     "max_tokens": 4096,
     "temperature": 0.5,
     "top_p": 1,
@@ -63,9 +63,9 @@
     "max_retries": 10
     },
     "doubao": {
-      "api_key": "you_doubao_api_key",
-      "model": "model_name",
-      "base_url": "your_doubao_base_url",
+      "api_key": "",
+      "model": "/data/share_weight/Mistral-7B-v0.3",
+      "base_url": "http://localhost:12341/v1/chat/completions",
       "max_tokens": 8192,
       "temperature": 0.5,
       "top_p": 1,
