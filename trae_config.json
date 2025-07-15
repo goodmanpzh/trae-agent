@@ -1,5 +1,5 @@
 {
-  "default_provider": "openrouter",
+  "default_provider": "ollama",
   "max_steps": 20,
   "enable_lakeview": true,
   "model_providers": {
@@ -45,7 +45,7 @@
     "ollama": {
       "api_key": "ollama",
       "base_url": "http://localhost:11434/v1",
-      "model": "model_name",
+      "model": "ExpedientFalcon/qwen3-4b-agent",
       "max_tokens": 4096,
       "temperature": 0.5,
       "top_p": 1,
