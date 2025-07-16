@@ -130,7 +130,7 @@ class TraeAgent(Agent):
     async def execute_task(self) -> AgentExecution:
         """Execute the task and finalize trajectory recording."""
         console_task = asyncio.create_task(self._cli_console.start()) if self._cli_console else None
-        execution = await super().execute_task()
+        execution = await super().execute_task() # 继承复用父类方法
         if self._cli_console and console_task and not console_task.done():
             await console_task
 
