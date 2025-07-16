@@ -1,5 +1,5 @@
 {
-  "default_provider": "openai",
+  "default_provider": "ollama",
   "max_steps": 20,
   "enable_lakeview": true,
   "model_providers": {
