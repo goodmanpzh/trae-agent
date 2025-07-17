@@ -45,7 +45,7 @@
     "ollama": {
       "api_key": "ollama",
       "base_url": "http://localhost:11434/v1",
-      "model": "ExpedientFalcon/qwen3-4b-agent",
+      "model": "qwen3:1.7b",
       "max_tokens": 4096,
       "temperature": 0.5,
       "top_p": 1,

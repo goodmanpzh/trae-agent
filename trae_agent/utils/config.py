@@ -171,6 +171,7 @@ def load_config(
         model, config.model_providers[str(resolved_provider)].model
     )
 
+    # 引用了自定，会对config.model_providers进行修改
     model_parameters = config.model_providers[str(resolved_provider)]
     if resolved_model is not None:
         model_parameters.model = str(resolved_model)

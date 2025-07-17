@@ -187,7 +187,7 @@ def interactive(
     provider: str | None = None,
     model: str | None = None,
     model_base_url: str | None = None,
-    api_key: str | None = None,
+    api_key: str | None = None, 
     config_file: str = "trae_config.json",
     max_steps: int | None = None,
     trajectory_file: str | None = None,

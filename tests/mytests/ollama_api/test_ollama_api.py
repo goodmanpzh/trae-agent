@@ -32,4 +32,4 @@ def test_ollama_generate(model, prompt):
 
 # 直接调用测试函数
 if __name__ == "__main__":
-    test_ollama_generate("qwen:4b", "你好，请简单介绍一下你自己。")
+    test_ollama_generate("qwen3:1.7b", "你好，请简单介绍一下你自己。")
